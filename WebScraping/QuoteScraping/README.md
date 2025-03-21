@@ -15,3 +15,7 @@ As I said before I will be following a tutorial for this project to simply learn
 ## Output:
 
 After running the python script the resulting csv file should be the same as the "scraped_quotes.csv" file found in this folder.
+
+## Issues:
+
+Currently the only issue I ran into is that certain characters were not displaying properly after doing a little bit of research I found I had to using 'encoding = "utf-8"' so certain characters would display as shown. However after doing so some of the quotes are now double quoted. I did a little bit of research and just found that it is a formatting issue with certain softwares such as excel. This isn't a major bug so I will not spend anymore time to fix it, however, if I were to fix it I would probably just strip the quotes of there quotation marks and manually put them back when adding them to the rows in the csv.
