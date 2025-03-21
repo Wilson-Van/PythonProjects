@@ -16,11 +16,12 @@ authors = soup.findAll("small", attrs={"class":"author"})
 file = open("./scraped_quotes.csv", 'w')
 writer = csv.writer(file)
 # I want to format the csv file a little better so I made a title for each row.
-writer.writerow(["Quote", "Author"])
+writer.writerow(["QUOTES", "AUTHORS"])
 
 
 # for loop to loop through each quote and author
 for quote, author in zip(quotes, authors):
+    print(quote.text + '-' + author.text)
     # write the quote in a row and then the author in the next
     writer.writerow([quote.text, author.text])
 
