@@ -21,7 +21,7 @@ writer.writerow(["QUOTES", "AUTHORS"])
 
 # for loop to loop through each quote and author
 for quote, author in zip(quotes, authors):
-    # write the quote in a row and then the author in the next
+    # write the quote in a  row and then the author in the next
     writer.writerow([quote.text, author.text])
 
 # close the file
