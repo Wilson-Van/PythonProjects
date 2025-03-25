@@ -16,7 +16,7 @@ response = requests.get(URL,
     'api_key': API_KEY,
     'regions': "us",
     'markets': "h2h,spreads",
-    'oddsFormat': "decimal",
+    'oddsFormat': "american",
     'dateFormat': "iso",
     }
 )
@@ -32,10 +32,27 @@ else:
     # print every sportsbook taking bets 
     # the odds of the h2h or spread bets
     for event in response_json:
-        print(event['away_team'] + ' at ' + event['home_team'] + " on " + event['commence_time'])
+        print(f"{event['away_team']} at {event['home_team']} on {event['commence_time']}")
         # loop through the list of sportsbooks taking bets
         for book in event['bookmakers']:
-            print("Sportsbook: " + book['title'])
+            # name of current sportsbook in the loop
+            sportsbook = book['title']
+            # list of all prompts offered
+            prompts = book['markets']
+            print(f"Sportsbook: {sportsbook}")
+            for prompt in prompts:
+                # possible outcomes for each prompt
+                outcomes = prompt['outcomes']
+                if prompt['key'] == "h2h":
+                    for outcome in outcomes:
+                        print(f"Winner: {outcome['name']} with {outcome['price']} odds.")
+                if prompt['key'] == "spreads":
+                    for outcome in outcomes:
+                        print(f"Winner: {outcome['name']} with a spread of {outcome['point']} with {outcome['price']} odds.")
+            print("=========================================================================================")
+        print("=========================================================================================")
+
+            
             
 
 # Check the usage quota
