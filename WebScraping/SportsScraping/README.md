@@ -2,7 +2,7 @@
 
 ## Description:
 
-This is a simple program that will take the information on sports, this includes the teams playing on a specific night, the matchups, spread, and other betting prompts. 
+This is a simple program that will show betting prompts and their odds from specific sportsbooks. The information given will be moneyline, spread, and the over/under betting prompts. 
 
 ## Purpose/Reasoning:
 

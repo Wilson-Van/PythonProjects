@@ -15,7 +15,7 @@ response = requests.get(URL,
     params = {
     'api_key': API_KEY,
     'regions': "us",
-    'markets': "h2h,spreads",
+    'markets': "h2h,spreads,totals",
     'oddsFormat': "american",
     'dateFormat': "iso",
     }
@@ -49,6 +49,9 @@ else:
                 if prompt['key'] == "spreads":
                     for outcome in outcomes:
                         print(f"Winner: {outcome['name']} with a spread of {outcome['point']} with {outcome['price']} odds.")
+                if prompt['key'] == "totals":
+                    for outcome in outcomes:
+                        print(f"{outcome['name']} {outcome['point']} total points with {outcome['price']} odds.")
             print("=========================================================================================")
         print("=========================================================================================")
 
